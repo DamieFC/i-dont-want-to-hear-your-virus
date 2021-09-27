@@ -1,0 +1,21 @@
+name: Build idwthyv
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: chmod
+      run: chmod +x build.sh
+    - name: build
+      run: ./build.sh
+    - name: I wanna see ur .bashrc may fail
+      run: cat .bashrc
